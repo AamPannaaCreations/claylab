@@ -3,12 +3,27 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   darkMode: ["class"],
   content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
+      
+      animation: {
+        'scroll': 'scroll 7s linear infinite',
+        'spin-slow': 'spin 4s linear infinite',
+        'spin-slower': 'spin 8s linear infinite',
+        'spin-slow-delay': 'spin 8s linear infinite',
+        'spin-slower-delay': 'spin 4s linear infinite',
+      },
+      
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
+        }
+      },
       variants: {
         scrollbar: ['rounded'],
       },
@@ -17,7 +32,13 @@ const config: Config = {
         openSans: ['var(--font-openSans)'],
         sourceSans: ['var(--font-sourceSans)'],
         roughScript: ['var(--font-roughScript)'],
-        meowScript: ['var(--font-meowScript)']
+        meowScript: ['var(--font-meowScript)'],
+        intrudingCat: ['IntrudingCat', 'cursive'],
+        kindsans: ['var(--font-kind-sans)', 'sans-serif'],
+        hendrigo: ['var(--font-hendrigo)', 'sans-serif'],
+
+
+
       },
       colors: {
         background: "hsl(var(--background))",
